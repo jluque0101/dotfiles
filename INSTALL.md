@@ -2,11 +2,11 @@
 
 ## Keyboard layout
 
-```$ loadkeys es```
+```$ loadkeys us```
 
 ## UEFI or BIOS?
 
-Check this:
+Check this (dellxps13):
 
 ```$ ls /sys/firmware/efi/efivars ```
 
@@ -166,11 +166,11 @@ $ passwd username
 
 **graphic card drivers: ** https://wiki.archlinux.org/index.php/xorg#Driver_installation
 
-**networking:** iw wpa_supplicant dialog network-manager-applet networkmanager
+**networking:** wpa_supplicant network-manager-applet networkmanager
 
-**desktop:** xfce4
+**desktop:** xfce4, awesome, xfce4-goodies
 
-**others:** oh-my-zsh git guake firefox thunderbird
+**others:** check packages.txt and repositories.txt
 
 ```
 $ pacman -S sudo
@@ -190,7 +190,7 @@ On
 SigLevel = Never
 Server = http://repo.archlinux.fr/$arch
 ```
+### useful links
+https://www.cio.com/article/3098030/how-to-install-arch-linux-on-dell-xps-13-2016-in-7-steps.html
 
-```
-$ sudo pacman -Sy yaourt
-```
+
