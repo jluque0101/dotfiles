@@ -126,6 +126,18 @@ $ bootctl update
 $ mkinitcpio -p linux
 ```
 
+## Issues with kernel parameters
+
+Add to /etc/default/grub, and rebuild it with 
+
+```bash
+grub-mkconfig
+``` 
+
+```bash
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 pci=nomsi quiet"
+```
+
 ## Configure locales
 
 On

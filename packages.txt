@@ -24,3 +24,4 @@ yay -S xf86-input-libinput xf86-input-synaptics xorg-xinput
 yay -S code
 yay -S xclip
 yay -S openssh
+yay -S i3lock-fancy-rapid-git
