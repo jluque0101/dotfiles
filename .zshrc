@@ -195,11 +195,11 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Archey shit
-archey3 --config=.config/archey/archey3.cfg
+archey3 --config=/home/$USER/.config/archey/archey3.cfg
 
 # Alias to overwrite oh-my-zsh ones
-
 alias l="lsd -lahrt"
 

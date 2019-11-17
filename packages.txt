@@ -25,3 +25,4 @@ yay -S code
 yay -S xclip
 yay -S openssh
 yay -S i3lock-fancy-rapid-git
+yay -S zsh-autosuggestions
