@@ -26,3 +26,7 @@ yay -S xclip
 yay -S openssh
 yay -S i3lock-fancy-rapid-git
 yay -S zsh-autosuggestions
+yay -S slack-desktop
+yay -S unzip
+yay -S file-roller
+yay -S font-manager
