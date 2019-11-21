@@ -3,7 +3,7 @@ pacman -S git
 yay -S htop gotop
 yay -S awesome-terminal-fonts
 yay -S awesome awesome-freedesktop-git
-yay -S compton
+yay -S picom 
 yay -S rofi
 yay -S the_silver_searcher
 yay -S pulseaudio-alsa pavucontrol
