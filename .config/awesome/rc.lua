@@ -57,7 +57,7 @@ local function run_once(cmd_arr)
     end
 end
 
-run_once({ "picom", "~/.config/redshift/redshift.sh" }) -- entries must be separated by commas
+run_once({ "picom", "~/.config/redshift/redshift.sh", "xset r rate 300 50" }) -- entries must be separated by commas
 -- run_once({ "urxvtd", "unclutter -root" }) -- entries must be separated by commas
 
 -- This function implements the XDG autostart specification
@@ -100,7 +100,7 @@ local scrlocker    = "xflock"
 
 awful.util.terminal = terminal
 
-awful.util.tagnames = { "", "", "","", "" }
+awful.util.tagnames = { "  ", " ", " ", " ", "聆 ", "阮 ", "" }
 --awful.util.tagnames = { "1", "2", "3", "4", "5" }
 awful.layout.layouts = {
     awful.layout.suit.floating,
