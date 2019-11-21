@@ -170,9 +170,6 @@ zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<-
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' \
   '+l:|?=** r:|?=**'
 
-# Enable fast cursor
-xset r rate 300 50
-
 # Initialize the autocompletion
 autoload -Uz compinit && compinit -i
 
