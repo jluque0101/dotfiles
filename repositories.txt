@@ -3,3 +3,7 @@ git clone https://github.com/arcticicestudio/nord-xfce-terminal.git
 git clone git@github.com:jluque0101/dotfiles.git
 git clone https://aur.archlinux.org/yay.git
 git clone https://github.com/powerline/fonts.git
+git clone --recursive https://github.com/lcpz/awesome-copycats.git
+# mv -bv awesome-copycats/* ~/.config/awesome && rm -rf awesome-copycats
+git clone git@github.com:lcpz/lain.git
+git clone git@github.com:lcpz/awesome-freedesktop.git
