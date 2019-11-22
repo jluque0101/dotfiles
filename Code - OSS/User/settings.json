@@ -1,0 +1,19 @@
+{
+    "editor.fontFamily": "Roboto Mono Medium for Powerline, octicons, Hack Nerd Font",
+    "editor.fontSize": 16,
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Dainty – Nord (chroma 1, lightness 4)",
+    "window.menuBarVisibility": "toggle",
+    "workbench.activityBar.visible": true,
+    "window.titleBarStyle": "custom",
+    "workbench.startupEditor": "newUntitledFile",
+    "window.zoomLevel": 0,
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.folders.theme": "specific",
+    "material-icon-theme.folders.color": "#42a5f5",
+    "material-icon-theme.opacity": 1,
+    "material-icon-theme.activeIconPack": "",
+    "editor.mouseWheelZoom": true,
+    "debug.console.fontFamily": "Roboto Mono Medium for Powerline, octicons, Hack Nerd Font",
+    "terminal.integrated.fontFamily": "Roboto Mono Medium for Powerline, octicons, Hack Nerd Font"
+}
