@@ -53,6 +53,7 @@ theme.layout_max                                = theme.dir .. "/icons/max.png"
 theme.layout_fullscreen                         = theme.dir .. "/icons/fullscreen.png"
 theme.layout_magnifier                          = theme.dir .. "/icons/magnifier.png"
 theme.layout_floating                           = theme.dir .. "/icons/floating.png"
+theme.layout_floating                           = theme.dir .. "/icons/floating.png"
 theme.widget_ac                                 = theme.dir .. "/icons/ac.png"
 theme.widget_battery                            = theme.dir .. "/icons/battery.png"
 theme.widget_battery_low                        = theme.dir .. "/icons/battery_low.png"
@@ -91,6 +92,12 @@ theme.titlebar_maximized_button_focus_active    = theme.dir .. "/icons/titlebar/
 theme.titlebar_maximized_button_normal_active   = theme.dir .. "/icons/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_inactive  = theme.dir .. "/icons/titlebar/maximized_focus_inactive.png"
 theme.titlebar_maximized_button_normal_inactive = theme.dir .. "/icons/titlebar/maximized_normal_inactive.png"
+
+-- lain related
+theme.layout_centerfair                         = theme.dir .. "/icons/centerfair.png"
+theme.layout_termfair                           = theme.dir .. "/icons/termfair.png"
+theme.layout_centerwork                         = theme.dir .. "/icons/centerwork.png"
+theme.layout_cascadetile                        = theme.dir .. "/icons/cascadetile.png"
 
 local markup = lain.util.markup
 local separators = lain.util.separators
