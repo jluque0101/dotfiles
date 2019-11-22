@@ -13,7 +13,7 @@ fi
 export TERM="xterm-256color"
 export EDITOR=vim
 export GOPATH=$HOME/.go
-export SSH_KEY=$(cat /home/$USER/.ssh/id_rsa.pub)
+export SSH_KEY=$(cat $HOME/.ssh/id_rsa.pub)
 export ZSH=/usr/share/oh-my-zsh/
 export KUBECONFIG=/home/jose/.kubectl_credentials
 
@@ -195,7 +195,7 @@ source /usr/share/fzf/completion.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Archey shit
-archey3 --config=/home/$USER/.config/archey/archey3.cfg
+archey3 --config=$HOME/.config/archey/archey3.cfg
 
 # Alias to overwrite oh-my-zsh ones
 alias l="lsd -lahrt"
