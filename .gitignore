@@ -1,3 +1,4 @@
 .config/Code - OSS/User/globalStorage/*
 .config/Code - OSS/User/workspaceStorage/*
+*.vscdb
 *.backup
