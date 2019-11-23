@@ -67,7 +67,7 @@ tyrannical.tags = {
     {
         name        = " ",
         init        = true,
-        exclusive   = true,
+        inclusive   = true,
         screen      = 1,
         layout      = awful.layout.suit.tile,
         -- exec_once   = {"dolphin"}, --When the tag is accessed for the first time, execute this command
@@ -78,7 +78,7 @@ tyrannical.tags = {
     {
         name        = " ",
         init        = true,
-        exclusive   = true,
+        inclusive   = true,
       --icon        = "~net.png",                 -- Use this icon for the tag (uncomment with a real path)
         screen      = screen.count()>1 and 2 or 1,-- Setup on screen 2 if there is more than 1 screen, else on screen 1
         layout      = awful.layout.suit.tile,      -- Use the max layout
@@ -132,7 +132,7 @@ tyrannical.tags = {
 
 -- Ignore the tag "exclusive" property for the following clients (matched by classes)
 tyrannical.properties.intrusive = {
-    "ksnapshot"     , "pinentry"       , "gtksu"     , "kcalc"        , "xcalc"               ,
+    "xfce4-screenshooter"     , "galculator"       , "gtksu"     , "kcalc"        , "xcalc"               ,
     "feh"           , "Gradient editor", "About KDE" , "Paste Special", "Background color"    ,
     "kcolorchooser" , "plasmoidviewer" , "Xephyr"    , "kruler"       , "plasmaengineexplorer",
 }
@@ -147,7 +147,7 @@ tyrannical.properties.floating = {
 
 -- Make the matching clients (by classes) on top of the default layout
 tyrannical.properties.ontop = {
-    "Xephyr"       , "ksnapshot"       , "kruler"
+    "xfce4-screenshooter"      , "ksnapshot"       , "kruler"
 }
 
 -- Force the matching clients (by classes) to be centered on the screen on init

@@ -269,8 +269,8 @@ local net = lain.widget.net({
     settings = function()
         widget:set_markup(markup.font(theme.font,
                           markup("#7AC82E", " " .. string.format("%02.1f", net_now.received))
-                          .. " " ..
-                          markup("#46A8C3", " " .. string.format("%02.1f", net_now.sent) .. " ")))
+                          .. " ↓↑ " ..
+                          markup("#46A8C3", "" .. string.format("%02.1f", net_now.sent) .. "")))
     end
 })
 
@@ -351,10 +351,13 @@ function theme.at_screen_connect(s)
             -- wibox.container.background(mailicon, theme.bg_focus),
             --wibox.container.background(theme.mail.widget, theme.bg_focus),
             --arrl_dl,
-            memicon,
-            mem.widget,
+            wibox.container.background(net.widget, theme.bg_focus),
+            spr,
+            arrl_ld,
             wibox.container.background(cpuicon, theme.bg_focus),
             wibox.container.background(cpu.widget, theme.bg_focus),
+            memicon,
+            mem.widget,
             tempicon,
             temp.widget,
             wibox.container.background(fsicon, theme.bg_focus),
@@ -364,7 +367,6 @@ function theme.at_screen_connect(s)
             -- bat.widget,
             --arrl_ld,
             --wibox.container.background(neticon, theme.bg_focus),
-            wibox.container.background(net.widget, theme.bg_focus),
             spr,
             arrl_ld,
             wibox.widget.systray(),
