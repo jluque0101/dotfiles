@@ -1,5 +1,6 @@
 code --install-extension alexanderte.dainty-nord-vscode
 code --install-extension arcticicestudio.nord-visual-studio-code
+code --install-extension DavidAnson.vscode-markdownlint
 code --install-extension dnlytras.nord-wave
 code --install-extension eamodio.gitlens
 code --install-extension formulahendry.code-runner
@@ -15,4 +16,5 @@ code --install-extension redhat.vscode-yaml
 code --install-extension rogalmic.bash-debug
 code --install-extension samuelcolvin.jinjahtml
 code --install-extension secanis.jenkinsfile-support
+code --install-extension shd101wyy.markdown-preview-enhanced
 code --install-extension vscoss.vscode-ansible

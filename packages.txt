@@ -31,3 +31,7 @@ yay -S unzip
 yay -S file-roller
 yay -S font-manager
 yay -S python-virtualenvwrapper
+galculator
+spotify
+evince-light
+docker
