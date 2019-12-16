@@ -1,36 +1,38 @@
-pacman -S firefox
-pacman -S git 
-yay -S htop gotop
-yay -S awesome-terminal-fonts
-yay -S awesome awesome-freedesktop-git
-yay -S picom 
-yay -S rofi
-yay -S the_silver_searcher
-yay -S pulseaudio-alsa pavucontrol
-yay -S ultra-flat-icons-blue
-yay -S powerline-fonts
-yay -S volumeicon
-yay -S zsh oh-my-zsh-git
-yay -S alsa-utils
-yay -S archey3
-yay -S lsd
-yay -S fzf
-yay -S zsh-syntax-highlighting
-yay -S libnotify
-yay -S bat
-yay -S redshift-gtk-git
-yay -S libinput-gestures
-yay -S xf86-input-libinput xf86-input-synaptics xorg-xinput
-yay -S code
-yay -S xclip
-yay -S openssh
-yay -S i3lock-fancy-rapid-git
-yay -S zsh-autosuggestions
-yay -S slack-desktop
-yay -S unzip
-yay -S file-roller
-yay -S font-manager
-yay -S python-virtualenvwrapper
+xfce4
+xfce4-goodies
+firefox
+git 
+htop gotop
+awesome-terminal-fonts
+awesome awesome-freedesktop-git
+picom 
+rofi
+the_silver_searcher
+pulseaudio-alsa pavucontrol
+ultra-flat-icons-blue
+powerline-fonts
+volumeicon
+zsh oh-my-zsh-git
+alsa-utils
+archey3
+lsd
+fzf
+zsh-syntax-highlighting
+libnotify
+bat
+redshift-gtk-git
+libinput-gestures
+xf86-input-libinput xf86-input-synaptics xorg-xinput
+code
+xclip
+openssh
+i3lock-fancy-rapid-git
+zsh-autosuggestions
+slack-desktop
+unzip
+file-roller
+font-manager
+python-virtualenvwrapper
 galculator
 spotify
 evince-light
