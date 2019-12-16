@@ -15,5 +15,6 @@
     "material-icon-theme.activeIconPack": "",
     "editor.mouseWheelZoom": true,
     "debug.console.fontFamily": "Roboto Mono Medium for Powerline, octicons, Hack Nerd Font",
-    "terminal.integrated.fontFamily": "Roboto Mono Medium for Powerline, octicons, Hack Nerd Font"
+    "terminal.integrated.fontFamily": "Roboto Mono Medium for Powerline, octicons, Hack Nerd Font",
+    "files.autoSave": "onWindowChange"
 }

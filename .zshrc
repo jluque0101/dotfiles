@@ -98,6 +98,7 @@ plugins=(
   git
   docker
   ansible
+  kubectl
 )
 
 
@@ -203,5 +204,4 @@ export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
 
 # Archey shit
-archey3 --config=$HOME/.config/archey/archey3.cfg
-
+archey3 #--config=$HOME/.config/archey/archey3.cfg
