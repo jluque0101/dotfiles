@@ -16,47 +16,74 @@ If the directory does not exist, the system may be booted in BIOS or CSM mode.
 
 ### Check disk name
 
-```$ lsblk ```
-
-### Create boot partition
-
+1. Install Windows 
+2. Create partition with the remaining space on nvme
+3. Create partition on the secondary disk
+4. Create physical volumes   
+4.1 pvcreate /dev/nvme0n1pX - stands for linux lvm
+4.2 pvcreate /dev/sdaX - stands for data storage disk
+5. Create volume groups
+5.1 vgcreate nvme /dev/nvme0n1pX
+5.2 vgcreate slow /dev/sdaX
+6. Create logical volumes
+6.1 lvcreate -L 80G nvme -n root
+6.2 lvcreate -L 512M nvme -n boot
+6.3 lvcreate -L 300G nvme -n home
+6.4 lvcreate -L 80G nvme -n containers
+6.5 lvcreate -L 120G slow -n data
 ```
-(parted) /dev/drive
-(parted) mklabel gpt
-(parted) mkpart ESP fat32 1MiB 513MiB
-(parted) set 1 boot on
+pvdisplay
+  --- Physical volume ---
+  PV Name               /dev/nvme0n1p2
+  VG Name               nvme
+  PV Size               600.00 GiB / not usable 4.00 MiB
+  Allocatable           yes 
+  PE Size               4.00 MiB
+  Total PE              153599
+  Free PE               35711
+  Allocated PE          117888
+  PV UUID               WBURCP-2vhX-RuMj-ub71-ZXNJ-0E12-8iLRgD
+   
+  --- Physical volume ---
+  PV Name               /dev/sda1
+  VG Name               slow
+  PV Size               931.51 GiB / not usable 4.69 MiB
+  Allocatable           yes 
+  PE Size               4.00 MiB
+  Total PE              238466
+  Free PE               110466
+  Allocated PE          128000
+  PV UUID               2R8Aod-7Jnc-ia44-x3nr-koIY-dgBB-M7CWiS
 ```
-### System and home partitions
+
+### Mounting partitions
 ```
-(parted) mkpart primary ext4 513MiB 30GiB
-(parted) mkpart primary linux-swap 30GiB 38GiB
-(parted) mkpart primary ext4 38GiB 100%
-(parted) quit  
- ```
-
- ### Format partitions
-
- ```
-$ mkfs.ext4 /dev/drive/sys_partition
-$ mkfs.ext4 /dev/drive/home_partition
-$ mkfs.fat -F32 /dev/drive/boot_partition
- ```
-
- ### Swap
- ```
-$ mkswap /dev/drive/swap_partition
-$ swapon /dev/drive/swap_partition
- ```
-
- ### Mounting partitions
-
+mount /dev/nvme/root /mnt
+mkdir -p /mnt/boot/efi /mnt/home/jose/data /var/lib/docker
+mount /dev/nvme/home /mnt/home
+mount /dev/nvme/boot /mnt/boot
+mount /dev/slow/data /mnt/home/jose/data
+mount /dev/nvmen0pX /mnt/boot/efi # This already should contain windows EFI
 ```
-$ mount /dev/drive/sys_partition /mnt
-$ mkdir -p /mnt/boot
-$ mkdir -p /mnt/home
-$ mount /dev/drive/boot_partition /mnt/boot
-$ mount /dev/drive/home_partition /mnt/home
+
+### Final state
+```$ lsblk 
+NAME                MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda                   8:0    0 931.5G  0 disk 
+└─sda1                8:1    0 931.5G  0 part 
+  └─slow-data       254:4    0   500G  0 lvm  /home/jose/data
+nvme0n1             259:0    0 931.5G  0 disk 
+├─nvme0n1p1         259:1    0   100M  0 part /boot/efi
+├─nvme0n1p2         259:2    0   600G  0 part 
+│ ├─nvme-root       254:0    0    80G  0 lvm  /
+│ ├─nvme-boot       254:1    0   512M  0 lvm  /boot
+│ ├─nvme-home       254:2    0   300G  0 lvm  /home
+│ └─nvme-containers 254:3    0    80G  0 lvm  /var/lib/docker
+├─nvme0n1p3         259:3    0    16M  0 part 
+└─nvme0n1p4         259:4    0 331.4G  0 part 
 ```
+
+
 
 ## Installing the system
 
@@ -81,61 +108,6 @@ $ genfstab -U /mnt > /mnt/etc/fstab
 
 ```
 $ arch-chroot /mnt /bin/bash
-```
-
-### Setup bootloader
-
-```
-$ bootctl --path=/boot install
-```
-
-On
-``
-/boot/loader/loader.conf
-``
-
-```
-default arch
-timeout 1
-editor 0
-```
-
-Getting UUID of root partition
-
-```
-$ blkid -s PARTUUID -o value /dev/disk/root_partition
-```
-
-On
-``
-/boot/loader/loader.conf
-``
-
-```
-title Arch Linux
-linux /vmlinuz-linux
-initrd /initramfs-linux.img
-options root=PARTUUID=66e3f67d-f59a-4086-acdd-a6e248a3ee80 rw
-```
-
-Update bootloader
-
-```bash
-$ bootctl update
-# add modules to /etc/mkinitcpio if its necessary
-$ mkinitcpio -p linux
-```
-
-## Issues with kernel parameters
-
-Add to /etc/default/grub, and rebuild it with 
-
-```bash
-grub-mkconfig
-``` 
-
-```bash
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 pci=nomsi quiet"
 ```
 
 ## Configure locales
@@ -172,37 +144,33 @@ $ passwd username
 
 ## Installing software
 
-**audio:** alsa-utils
+**amd:** amd-ucode
 
 **x server:** xorg-server xorg-xinit xorg-utils xorg-server-utils
 
-**graphic card drivers: ** https://wiki.archlinux.org/index.php/xorg#Driver_installation
+**graphic card drivers: ** nvidia, nvidia-settings
 
-**networking:** wpa_supplicant network-manager-applet networkmanager
+**networking:** wpa_supplicant network-manager-applet networkmanager iwctl
 
-**desktop:** xfce4, awesome, xfce4-goodies
+**desktop:** xfce4, awesome, xfce4-goodies, vim
 
-**others:** check packages.txt and repositories.txt
+**boot:** grub, os-prober, efibootmgr
+
+**others:** check packages.txt and repositories.txt , can be done afterwards
 
 ```
 $ pacman -S sudo
-$ EDITOR=nano visudo
+$ EDITOR=vim visudo
 $ %wheel ALL=(ALL) ALL
 ```
 
 Set ``/etc/hostname``
 
-On
-``
-/etc/pacman.conf
-``
-
+## Install grub
+Update `/etc/default/grub` adding lvm
+Update `/etc/mkinitcpio.conf` adding lvm2
 ```
-[archlinuxfr]
-SigLevel = Never
-Server = http://repo.archlinux.fr/$arch
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+mkinitcipio -P
 ```
-### useful links
-https://www.cio.com/article/3098030/how-to-install-arch-linux-on-dell-xps-13-2016-in-7-steps.html
-
-

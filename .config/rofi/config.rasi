@@ -1,9 +1,9 @@
 configuration {
-	modi: "window,drun";
+	modi: "window,drun,file-browser";
 /*	width: 50;  */
-	lines: 15;  
+	lines: 15;
 /*	columns: 2; */
-	font: "Inconsolata\-g for Powerline 12";
+	font: "Inconsolata Regular 12";
 /*	bw: 1;*/
 /*	location: 0;*/
 /*	padding: 5;*/
@@ -53,7 +53,7 @@ configuration {
 /*	window-format: "{w}    {c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
-	theme: "fancy" ;
+	theme: "material" ;
 /*	color-normal: ;*/
 /*	color-urgent: ;*/
 /*	color-active: ;*/
@@ -143,4 +143,3 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
-@import "/usr/share/rofi/themes/fancy.rasi"

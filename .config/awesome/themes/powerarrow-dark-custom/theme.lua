@@ -17,7 +17,7 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow-dark-custom"
 theme.wallpaper                                 = theme.dir .. "/wall.jpg"
-theme.font					                    = "Inconsolata -g for Powerline 10"
+theme.font					                    = "Inconsolata Medium 14"
 theme.taglist_font                              = "FontAwesome 18"
 theme.fg_normal                                 = "#FEFEFE"
 theme.fg_focus                                  = "#32D6FF"
@@ -115,7 +115,7 @@ local clock = awful.widget.watch(
 theme.cal = lain.widget.cal({
     attach_to = { clock },
     notification_preset = {
-        font = "Roboto Mono Medium for Powerline 10",
+        font = "Inconsolata Medium 10",
         fg   = theme.fg_normal,
         bg   = theme.bg_normal
     }
@@ -323,10 +323,11 @@ function theme.at_screen_connect(s)
         },
         list_update, 
         wibox.layout.flex.horizontal()
+	--wibox.layout.align.vertical()
     )
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(24), bg = theme.bg_normal, fg = theme.fg_normal })
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(30), bg = theme.bg_normal, fg = theme.fg_normal })
 
     -- Add widgets to the wibox
     s.mywibox:setup {

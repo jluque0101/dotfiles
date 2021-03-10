@@ -24,7 +24,7 @@ MiscRewrapOnResize=TRUE
 MiscUseShiftArrowsToScroll=FALSE
 MiscSlimTabs=TRUE
 MiscNewTabAdjacent=FALSE
-FontName=Roboto Mono Light for Powerline Bold 12
+FontName=Roboto Mono Medium 12
 MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=TRUE
 ColorForeground=#D8DEE9
@@ -38,7 +38,7 @@ BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 BackgroundDarkness=0.950000
 ScrollingUnlimited=TRUE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
-ColorBackgroundVary=TRUE
 ShortcutsNoMenukey=TRUE
 ShortcutsNoHelpkey=TRUE
+ColorBackgroundVary=TRUE
 

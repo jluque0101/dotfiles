@@ -1,9 +1,2 @@
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-git clone https://github.com/arcticicestudio/nord-xfce-terminal.git
-git clone git@github.com:jluque0101/dotfiles.git
-git clone https://aur.archlinux.org/yay.git
-git clone https://github.com/powerline/fonts.git
-git clone --recursive https://github.com/lcpz/awesome-copycats.git
-# mv -bv awesome-copycats/* ~/.config/awesome && rm -rf awesome-copycats
-git clone git@github.com:lcpz/lain.git
-git clone git@github.com:lcpz/awesome-freedesktop.git
+https://github.com/davatorium/rofi-themes/tree/master/User%20Themes
+https://github.com/Adapta-Projemcts/Adapta-Nordp
